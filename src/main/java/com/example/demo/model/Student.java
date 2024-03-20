@@ -45,7 +45,7 @@ public class Student {
 	@OneToOne(targetEntity=Address.class,cascade=CascadeType.ALL)
 	
 	//this is the foreign key....addid
-	@JoinColumn(name="addid")
+	@JoinColumn(name="addid", referencedColumnName="addressid")
 	private Address addobj;
 
 }
