@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,7 +34,14 @@ public class ProductController {
 	@GetMapping("/retrieveData/{pid}")
 	public Product getProduct(@PathVariable("pid") int id)
 	{
-		return productrep.findById(id).get();
+		//return productrep.findById(id).get();
+		Product p = null;
+		Optional<Product> pdata = productrep.findById(id);
+		if(pdata.isPresent())
+		{
+			p = pdata.get();
+		}
+		return p;
 	}
 	
 	@GetMapping("/data/{pname}")

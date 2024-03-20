@@ -7,6 +7,11 @@ import jakarta.persistence.*;
 public class Address {
 	@Id
 	private int addressid;
+	
+	private String city;
+	
+	private String state;
+	
 	public int getAddressid() {
 		return addressid;
 	}
@@ -25,7 +30,5 @@ public class Address {
 	public void setState(String state) {
 		this.state = state;
 	}
-	private String city;
-	private String state;
 
 }
